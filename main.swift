@@ -8,7 +8,7 @@ let digits = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
 let special_characters = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "=", "+", "[", "]", "{", "}", ";", ":", "'", "\"", ",", "<", ".", ">", "/", "?", "|", "~", "`"]
 
 //mutable variables
-var password = "Aust"
+var password = ""
 var password_length = password.count
 var has_uppercase = false
 var has_lowercase = false
@@ -20,6 +20,10 @@ var digit_count = 0
 var special_character_count = 0
 var strength_score = 0
 var password_grade: Bool = false
+
+if let input_password = readLine() {
+    password = input_password
+}
 
 
 // checks the password for all types of characters, and counts them
