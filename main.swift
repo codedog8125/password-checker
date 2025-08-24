@@ -65,4 +65,5 @@ if has_special_characters && special_character_count >= 3 {
     strength_score += 1
 }
 
-pr
+print("Password Strength Score: \(strength_score) out of 13")
+print("\(strength_score / 13 * 100)% strength")
