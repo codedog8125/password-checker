@@ -7,7 +7,7 @@ let lowercase_letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", 
 let digits = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
 let special_characters = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "=", "+", "[", "]", "{", "}", ";", ":", "'", "\"", ",", "<", ".", ">", "/", "?", "|", "~", "`"]
 
-// mutibel vaibles
+//mutable variables
 var password = "Aust"
 var password_length = password.count
 var has_uppercase = false
@@ -20,6 +20,8 @@ var digit_count = 0
 var special_character_count = 0
 var strength_score = 0
 var password_grade: Bool = false
+
+
 // checks the password for all types of characters, and counts them
 for letter in password {
     if uppercase_letters.contains(String(letter)) {
