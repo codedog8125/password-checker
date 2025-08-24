@@ -8,7 +8,7 @@ let digits = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
 let special_characters = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "=", "+", "[", "]", "{", "}", ";", ":", "'", "\"", ",", "<", ".", ">", "/", "?", "|", "~", "`"]
 
 // mutibel vaibles
-var password = ""
+var password = "Aust"
 var password_length = password.count
 var has_uppercase = false
 var has_lowercase = false
@@ -19,7 +19,7 @@ var lowercase_count = 0
 var digit_count = 0
 var special_character_count = 0
 var strength_score = 0
-
+var password_grade: Bool = false
 // checks the password for all types of characters, and counts them
 for letter in password {
     if uppercase_letters.contains(String(letter)) {
@@ -38,32 +38,59 @@ for letter in password {
 }
 
 if password_length >= 12 {
-    strength_score += 1
+    strength_score += 2
+} else {
+    strength_score += 0
 }
 
 if has_uppercase && uppercase_count >= 3 {
     strength_score += 3
 } else if has_uppercase && uppercase_count < 3 { 
     strength_score += 1
+} else {
+    strength_score += 0
 }
 
 if has_lowercase && lowercase_count >= 3 {
     strength_score += 3
 } else if has_lowercase && lowercase_count < 3 { 
     strength_score += 1
+} else {
+    strength_score += 0
 }
 
 if has_digit && digit_count >= 3 {
     strength_score += 3
 } else if has_digit && digit_count < 3 { 
     strength_score += 1
+} else {
+    strength_score += 0
 }
 
-if has_special_characters && special_character_count >= 3 {
+if has_special_character && special_character_count >= 3 {
     strength_score += 3
-} else if has_special_charactersn && lowercase_count < 3 { 
+} else if has_special_character && lowercase_count < 3 { 
     strength_score += 1
+} else {
+    strength_score += 0
+}   
+
+if strength_score >= 9 {
+    password_grade = true
+} else {
+    password_grade = false
 }
 
-print("Password Strength Score: \(strength_score) out of 13")
-print("\(strength_score / 13 * 100)% strength")
+// --- OUTPUT ---
+print("Password: \(password)")
+print("Password Strength Score: \(strength_score) out of 14")
+print("\( Double(strength_score) / 14 * 100)% strength")
+print("Password is strong: \(password_grade)")
+
+if !password_grade {
+    print("Password must be at least 12 characters long and contain at least 3 uppercase letters, 3 lowercase letters, 3 digits, and 3 special characters.")
+}
+
+
+
+
