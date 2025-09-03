@@ -51,7 +51,7 @@ if password_length >= 12 {
 
 if has_uppercase && uppercase_count >= 3 {
     strength_score += 3
-} else if has_uppercase && uppercase_count < 3 { 
+} else if has_uppercase && uppercase_count < 3 {
     strength_score += 1
 } else {
     strength_score += 0
@@ -59,7 +59,7 @@ if has_uppercase && uppercase_count >= 3 {
 
 if has_lowercase && lowercase_count >= 3 {
     strength_score += 3
-} else if has_lowercase && lowercase_count < 3 { 
+} else if has_lowercase && lowercase_count < 3 {
     strength_score += 1
 } else {
     strength_score += 0
@@ -67,7 +67,7 @@ if has_lowercase && lowercase_count >= 3 {
 
 if has_digit && digit_count >= 3 {
     strength_score += 3
-} else if has_digit && digit_count < 3 { 
+} else if has_digit && digit_count < 3 {
     strength_score += 1
 } else {
     strength_score += 0
@@ -75,11 +75,11 @@ if has_digit && digit_count >= 3 {
 
 if has_special_character && special_character_count >= 3 {
     strength_score += 3
-} else if has_special_character && lowercase_count < 3 { 
+} else if has_special_character && lowercase_count < 3 {
     strength_score += 1
 } else {
     strength_score += 0
-}   
+}
 
 if strength_score >= 9 {
     password_grade = true
