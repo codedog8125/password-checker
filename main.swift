@@ -21,6 +21,7 @@ var special_character_count = 0
 var strength_score = 0
 var password_grade: Bool = false
 
+print("enter the password below: ")
 if let input_password = readLine() {
     password = input_password
 }
@@ -83,14 +84,15 @@ if has_special_character && special_character_count >= 3 {
 
 if strength_score >= 9 {
     password_grade = true
+
 } else {
     password_grade = false
 }
 
 // --- OUTPUT ---
 print("Password: \(password)")
-print("Password Strength Score: \(strength_score) out of 14")
-print("\( Double(strength_score) / 14 * 100)% strength")
+print("Password Strength Score: \(strength_score) out of 12")
+print("\( Double(strength_score) / 12 * 100)% strength")
 print("Password is strong: \(password_grade)")
 
 if !password_grade {
